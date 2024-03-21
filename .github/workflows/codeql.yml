@@ -7,6 +7,7 @@ on:
     branches: [ "main" ]
   schedule:
     - cron: '21 21 * * 3'
+  workflow_dispatch:  # Add workflow_dispatch event here
 
 jobs:
   analyze:
@@ -28,7 +29,7 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: javascript
-        # Adjust the above line according to your primary language if it's different.
+        disable-default-config: true  # Disable the default setup
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
