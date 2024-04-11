@@ -63,13 +63,33 @@
 				    
 			    </div><!--//auth-body-->
 		    
-			    <footer class="app-auth-footer">
-				    <div class="container text-center py-3">
-				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-				       
-				    </div>
-			    </footer><!--//app-auth-footer-->	
+			    <footer class="app-footer">
+			<div class="container text-center py-3">
+			  <small class="copyright">
+				Developed by 
+				<a class="app-link" href="http://datamatics.co.sz" target="_blank">
+				  <img src="assets/images/datamatics.png" alt="Datamatics Logo" class="me-1" style="height: 1em; width: 1em;">
+				  Datamatics Eswatini
+				</a> 
+				© <span id="currentYear"></span>
+			  </small>
+			  <br>
+			  <p class="text-muted">Contact us: <a href="mailto:info@datamatics.co.sz">info@datamatics.co.sz</a> | Phone: +268 2404 7198</p>
+			  
+			  <a href="https://www.facebook.com/people/Datamatics-Swaziland/100067344042962/" class="text-muted mx-1">
+				<i class="fab fa-facebook-f"></i> </a>
+			  <a href="https://linkedin.com/company/datamatics-swaziland" class="text-muted mx-1">
+				<i class="fab fa-linkedin"></i> </a>
+			  
+			  <a href="#" class="text-muted mx-1">Privacy Policy</a>
+			  <a href="#" class="text-muted mx-1">Terms of Service</a>
+			</div>
+		</footer>
+		
+		<script>
+		  const currentYear = new Date().getFullYear();
+		  document.getElementById("currentYear").textContent = currentYear; 
+		</script>
 		    </div><!--//flex-column-->   
 	    </div><!--//auth-main-col-->
 	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
