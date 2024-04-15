@@ -571,27 +571,32 @@
 	    </div><!--//app-content-->
 	    
 		<footer class="app-footer">
-  <div class="container text-center py-3">
-    <small class="copyright">
-      Developed by 
-      <a class="app-link" href="http://datamatics.co.sz" target="_blank">
-        <img src="assets/images/datamatics.png" alt="Datamatics Logo" class="me-1" style="height: 1em; width: 1em;">
-        Datamatics Eswatini
-      </a> 
-      © <?php echo date('Y'); ?>
-    </small>
-    <br>
-    <p class="text-muted">Contact us: <a href="mailto:info@datamatics.co.sz">info@datamatics.co.sz</a> | Phone: +268 2404 7198</p>
-    
-    <a href="https://www.facebook.com/people/Datamatics-Swaziland/100067344042962/" class="text-muted mx-1">
-      <i class="fab fa-facebook-f"></i> </a>
-    <a href="https://linkedin.com/company/datamatics-swaziland" class="text-muted mx-1">
-      <i class="fab fa-linkedin"></i> </a>
-    
-    <a href="#" class="text-muted mx-1">Privacy Policy</a>
-    <a href="#" class="text-muted mx-1">Terms of Service</a>
-  </div>
-</footer>
+			<div class="container text-center py-3">
+			  <small class="copyright">
+				Developed by 
+				<a class="app-link" href="http://datamatics.co.sz" target="_blank">
+				  <img src="assets/images/datamatics.png" alt="Datamatics Logo" class="me-1" style="height: 1em; width: 1em;">
+				  Datamatics Eswatini
+				</a> 
+				© <span id="currentYear"></span>
+			  </small>
+			  <br>
+			  <p class="text-muted">Contact us: <a href="mailto:info@datamatics.co.sz">info@datamatics.co.sz</a> | Phone: +268 2404 7198</p>
+			  
+			  <a href="https://www.facebook.com/people/Datamatics-Swaziland/100067344042962/" class="text-muted mx-1">
+				<i class="fab fa-facebook-f"></i> </a>
+			  <a href="https://linkedin.com/company/datamatics-swaziland" class="text-muted mx-1">
+				<i class="fab fa-linkedin"></i> </a>
+			  
+			  <a href="#" class="text-muted mx-1">Privacy Policy</a>
+			  <a href="#" class="text-muted mx-1">Terms of Service</a>
+			</div>
+		</footer>
+		
+		<script>
+		  const currentYear = new Date().getFullYear();
+		  document.getElementById("currentYear").textContent = currentYear; 
+		</script>
 
 
 

@@ -1,19 +1,48 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["signin-email"];
+    $password = $_POST["signin-password"];
+
+    $servername = "localhost";
+    $usernameDB = "root";
+    $passwordDB = "";
+    $dbname = "db_yerf";
+
+    // Create connection
+    $conn = new mysqli($servername, $usernameDB, $passwordDB, $dbname);
+
+
+    // Check connection
+    if ($conn->connect_error) {
+        error_log("Connection failed: " . $conn->connect_error);
+        die("There was a problem connecting to the database. Please try again later.");
+    }
+}
+
+session_unset();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>YERF Web Portal</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="author" content="Datamatics Eswatini">    
     <link rel="shortcut icon" href="favicon.ico"> 
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
@@ -37,6 +66,10 @@
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">Your Email</label>
 								<input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="Email" required="required">
+							</div>
+							<div class="birthday mb-3">
+								<label class="sr-only" for="signup-birthday">Your Birthday</label>
+								<input type="date" id="signup-birthday" name="signup-birthday" class="form-control" required="required" placeholder="Select your birthday"> 
 							</div>
 							<div class="password mb-3">
 								<label class="sr-only" for="signup-password">Password</label>
@@ -63,13 +96,33 @@
 				    
 			    </div><!--//auth-body-->
 		    
-			    <footer class="app-auth-footer">
-				    <div class="container text-center py-3">
-				         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-			        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-				       
-				    </div>
-			    </footer><!--//app-auth-footer-->	
+			    <footer class="app-footer">
+			<div class="container text-center py-3">
+			  <small class="copyright">
+				Developed by 
+				<a class="app-link" href="http://datamatics.co.sz" target="_blank">
+				  <img src="assets/images/datamatics.png" alt="Datamatics Logo" class="me-1" style="height: 1em; width: 1em;">
+				  Datamatics Eswatini
+				</a> 
+				© <span id="currentYear"></span>
+			  </small>
+			  <br>
+			  <p class="text-muted">Contact us: <a href="mailto:info@datamatics.co.sz">info@datamatics.co.sz</a> | Phone: +268 2404 7198</p>
+			  
+			  <a href="https://www.facebook.com/people/Datamatics-Swaziland/100067344042962/" class="text-muted mx-1">
+				<i class="fab fa-facebook-f"></i> </a>
+			  <a href="https://linkedin.com/company/datamatics-swaziland" class="text-muted mx-1">
+				<i class="fab fa-linkedin"></i> </a>
+			  
+			  <a href="#" class="text-muted mx-1">Privacy Policy</a>
+			  <a href="#" class="text-muted mx-1">Terms of Service</a>
+			</div>
+		</footer>
+		
+		<script>
+		  const currentYear = new Date().getFullYear();
+		  document.getElementById("currentYear").textContent = currentYear; 
+		</script>
 		    </div><!--//flex-column-->   
 	    </div><!--//auth-main-col-->
 	    <div class="col-12 col-md-5 col-lg-6 h-100 auth-background-col">
