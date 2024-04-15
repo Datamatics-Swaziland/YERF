@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	try{
     // Prepare and execute a query to retrieve the user's information
-    $sql = "SELECT user_id, username, password_hash, email, failed_attempts, last_failed_attempt FROM users WHERE username = ?";
+    $sql = "SELECT user_id, username, password_hash, email, failed_attempts, last_failed_attempt FROM users WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -131,15 +131,15 @@ session_destroy();
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>YERF Web Portal</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="description" content="YERF Web Portal">
+    <meta name="author" content="Datamatics Eswatini">    
     <link rel="shortcut icon" href="favicon.ico"> 
     
     <!-- FontAwesome JS-->

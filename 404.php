@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>YERF Web Portal</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Portal - Bootstrap 5 Admin Dashboard Template For Developers">
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="description" content="YERF Web Portal">
+    <meta name="author" content="Datamatics Eswatini">    
     <link rel="shortcut icon" href="favicon.ico"> 
     
     <!-- FontAwesome JS-->
@@ -42,12 +42,32 @@
    
     
     <footer class="app-footer">
-	    <div class="container text-center py-3">
-	         <!--/* This template is free as long as you keep the footer attribution link. If you'd like to use the template without the attribution link, you can buy the commercial license via our website: themes.3rdwavemedia.com Thank you for your support. :) */-->
-        <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart" style="color: #fb866a;"></i> by <a class="app-link" href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
-	       
-	    </div>
-    </footer><!--//app-footer-->
+			<div class="container text-center py-3">
+			  <small class="copyright">
+				Developed by 
+				<a class="app-link" href="http://datamatics.co.sz" target="_blank">
+				  <img src="assets/images/datamatics.png" alt="Datamatics Logo" class="me-1" style="height: 1em; width: 1em;">
+				  Datamatics Eswatini
+				</a> 
+				© <span id="currentYear"></span>
+			  </small>
+			  <br>
+			  <p class="text-muted">Contact us: <a href="mailto:info@datamatics.co.sz">info@datamatics.co.sz</a> | Phone: +268 2404 7198</p>
+			  
+			  <a href="https://www.facebook.com/people/Datamatics-Swaziland/100067344042962/" class="text-muted mx-1">
+				<i class="fab fa-facebook-f"></i> </a>
+			  <a href="https://linkedin.com/company/datamatics-swaziland" class="text-muted mx-1">
+				<i class="fab fa-linkedin"></i> </a>
+			  
+			  <a href="#" class="text-muted mx-1">Privacy Policy</a>
+			  <a href="#" class="text-muted mx-1">Terms of Service</a>
+			</div>
+		</footer>
+		
+		<script>
+		  const currentYear = new Date().getFullYear();
+		  document.getElementById("currentYear").textContent = currentYear; 
+		</script>
 
     <!-- Javascript -->          
     <script src="assets/plugins/popper.min.js"></script>

@@ -1,19 +1,48 @@
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["signin-email"];
+    $password = $_POST["signin-password"];
+
+    $servername = "localhost";
+    $usernameDB = "root";
+    $passwordDB = "";
+    $dbname = "db_yerf";
+
+    // Create connection
+    $conn = new mysqli($servername, $usernameDB, $passwordDB, $dbname);
+
+
+    // Check connection
+    if ($conn->connect_error) {
+        error_log("Connection failed: " . $conn->connect_error);
+        die("There was a problem connecting to the database. Please try again later.");
+    }
+}
+
+session_unset();
+session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <title>Portal - Bootstrap 5 Admin Dashboard Template For Developers</title>
+    <title>YERF Web Portal</title>
     
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    
-    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <meta name="author" content="Datamatics Eswatini">    
     <link rel="shortcut icon" href="favicon.ico"> 
     
     <!-- FontAwesome JS-->
     <script defer src="assets/plugins/fontawesome/js/all.min.js"></script>
+	
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
     
     <!-- App CSS -->  
     <link id="theme-style" rel="stylesheet" href="assets/css/portal.css">
@@ -37,6 +66,10 @@
 							<div class="email mb-3">
 								<label class="sr-only" for="signup-email">Your Email</label>
 								<input id="signup-email" name="signup-email" type="email" class="form-control signup-email" placeholder="Email" required="required">
+							</div>
+							<div class="birthday mb-3">
+								<label class="sr-only" for="signup-birthday">Your Birthday</label>
+								<input type="date" id="signup-birthday" name="signup-birthday" class="form-control" required="required" placeholder="Select your birthday"> 
 							</div>
 							<div class="password mb-3">
 								<label class="sr-only" for="signup-password">Password</label>
